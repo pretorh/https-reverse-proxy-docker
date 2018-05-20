@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-RUN apk update --no-cache && apk add acme-client
+RUN apk update --no-cache && apk add acme-client libressl
 
 COPY etc/ /etc/nginx/
 
