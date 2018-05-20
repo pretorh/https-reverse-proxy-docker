@@ -6,3 +6,5 @@ COPY etc/ /etc/nginx/
 
 WORKDIR /opt/rproxy/
 COPY ./bin/* ./
+
+CMD sh ./run.sh
