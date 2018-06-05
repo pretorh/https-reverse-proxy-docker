@@ -1,2 +1,5 @@
 *.swp
 .private/
+.git/
+*.sh
+!bin/*.sh
