@@ -9,6 +9,6 @@ VOLUME /opt/rproxy/private
 RUN rm -rv /etc/ssl/acme/ && \
     ln -sfv /opt/rproxy/private/acme /etc/ssl/acme
 
-COPY ./bin/* ./
+COPY ./bin/ ./
 
 CMD sh ./run.sh
