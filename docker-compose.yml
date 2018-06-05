@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  rproxy:
+    image: pretorh/https-rproxy
+    ports:
+      - 80:80
+      - 433:433
+    volumes:
+      - ./.private:/opt/rproxy/private
