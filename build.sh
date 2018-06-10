@@ -2,4 +2,4 @@
 set -e
 
 TAG=${1-latest}
-docker build -t pretorh/https-rproxy:$TAG .
+docker build -t pretorh/https-reverse-proxy:$TAG .
