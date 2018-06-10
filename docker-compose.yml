@@ -2,7 +2,7 @@ version: "3"
 
 services:
   rproxy:
-    image: pretorh/https-rproxy
+    image: pretorh/https-reverse-proxy
     ports:
       - 80:80
       - 433:433
