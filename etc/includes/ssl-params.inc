@@ -1,6 +1,6 @@
 # from https://cipherli.st/
 
-ssl_protocols               TLSv1.3;
+ssl_protocols               TLSv1.2;
 ssl_prefer_server_ciphers   on;
 ssl_dhparam                 /opt/rproxy/private/dhparam.pem;
 ssl_ciphers                 ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;
