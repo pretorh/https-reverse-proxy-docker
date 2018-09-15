@@ -13,6 +13,10 @@ if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
   ln -sv $(pwd)/private/sites /etc/nginx/conf.d/sites
 fi
 
+if [ ! -z "$CRON_DAY" -a ! -z "$CRON_HOUR" ] ; then
+  sh $(dirname $0)/job/install.sh
+fi
+
 echo ""
 echo "starting nginx"
 nginx -g 'daemon off;'
