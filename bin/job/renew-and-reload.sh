@@ -2,5 +2,9 @@
 set -e
 
 cd $(dirname $0)/..
-sh ./renew-certs.sh || (echo "up to date"; exit 0)
-./reload-nginx.sh
+if sh ./renew-certs.sh ; then
+  echo "reloading"
+  ./reload-nginx.sh
+else
+  echo "up to date"
+fi
