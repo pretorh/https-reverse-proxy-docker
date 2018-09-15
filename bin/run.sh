@@ -1,10 +1,10 @@
 if [ ! -d  ./private/acme ] ; then
-  sh $(dirname $0)/utils/first-run-note.sh
+  sh $(dirname $0)/setup/first-run-note.sh
   mkdir -pv ./private/acme
 fi
 
 if [ ! -f ./private/dhparam.pem ] ; then
-  sh $(dirname $0)/generate-dhparam.sh
+  sh $(dirname $0)/setup/generate-dhparam.sh
 fi
 
 if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
