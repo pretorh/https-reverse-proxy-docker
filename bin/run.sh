@@ -8,9 +8,9 @@ if [ ! -f ./private/dhparam.pem ] ; then
 fi
 
 if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
- echo "creating sym link from mounted sites to nginx dir"
- mkdir -pv ./private/sites
- ln -sv $(pwd)/private/sites /etc/nginx/conf.d/sites
+  echo "creating sym link from mounted sites to nginx dir"
+  mkdir -pv ./private/sites
+  ln -sv $(pwd)/private/sites /etc/nginx/conf.d/sites
 fi
 
 echo ""
