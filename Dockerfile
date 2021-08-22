@@ -5,7 +5,7 @@ RUN apk update --no-cache && \
 
 WORKDIR /opt/rproxy/
 VOLUME /opt/rproxy/private
-RUN rm -rv /etc/ssl/acme/ && \
+RUN rm -rfv /etc/ssl/acme/ && \
     ln -sfv /opt/rproxy/private/acme /etc/ssl/acme
 
 COPY etc/ /etc/nginx/
