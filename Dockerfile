@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 RUN apk update --no-cache && \
-    apk add acme-client libressl
+    apk add openssl acme.sh
 
 WORKDIR /opt/rproxy/
 VOLUME /opt/rproxy/private
