@@ -3,6 +3,8 @@ if [ ! -d  ./private/acme ] ; then
   mkdir -pv ./private/acme
 fi
 
+mkdir -pv ./private/acme.sh
+
 if [ ! -f ./private/dhparam.pem ] ; then
   sh $(dirname $0)/setup/generate-dhparam.sh
 fi
