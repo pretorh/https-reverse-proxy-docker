@@ -22,4 +22,5 @@ jobs:
       uses: docker/build-push-action@v2.7.0
       with:
         push: true
-        tags: pretorh/https-reverse-proxy:latest,pretorh/https-reverse-proxy:${GITHUB_SHA}
+        tags: pretorh/https-reverse-proxy:latest,pretorh/https-reverse-proxy:${{ github.sha }}
+
