@@ -1,14 +1,16 @@
 #!/usr/bin/env sh
 set -e
 
-cd $(dirname $0)/..
+start_file="$(mktemp)"
+
 updated=0
-if sh ./renew-certs.sh ; then
-  echo "reloading"
-  ./reload-nginx.sh
-  updated=1
+if sh /opt/rproxy/renew-certs.sh ; then
+  echo "update job successful"
+  if find /opt/rproxy/private/acme/private -type f -name 'privkey.pem' -newer "$start_file" | grep '^' ; then
+    updated=1
+  fi
 else
-  echo "up to date"
+  echo "error renewing!" >&2
 fi
 
 [ -x ./private/post-cron.sh ] && ./private/post-cron.sh $updated
