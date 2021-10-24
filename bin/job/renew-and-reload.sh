@@ -11,6 +11,7 @@ if sh /opt/rproxy/renew-certs.sh ; then
   fi
 else
   echo "error renewing!" >&2
+  updated=-1
 fi
 
 [ -x ./private/post-cron.sh ] && ./private/post-cron.sh $updated
