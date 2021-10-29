@@ -14,4 +14,9 @@ else
   updated=-1
 fi
 
-[ -x ./private/post-cron.sh ] && ./private/post-cron.sh $updated
+if [ -x /opt/rproxy/private/post-cron.sh ] ; then
+  echo "executing post-cron.sh script"
+  /opt/rproxy/private/post-cron.sh $updated
+else
+  echo "no post-cron.sh script"
+fi
