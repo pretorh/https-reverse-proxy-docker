@@ -19,7 +19,7 @@ if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
   ln -sv $(pwd)/private/sites /etc/nginx/conf.d/sites
 fi
 
-if [ ! -z "$CRON_DAY" -a ! -z "$CRON_HOUR" ] ; then
+if [ -n "$CRON_DAY" ] && [ -n "$CRON_HOUR" ] ; then
   sh "$root/job/install.sh"
 fi
 
