@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -16,8 +16,8 @@ jobs:
     - name: Setup ShellCheck
       shell: bash
       run: |
-      curl -Lso shellcheck.tar.xz https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz
-      tar -xf shellcheck.tar.xz shellcheck-stable/shellcheck --strip-components 1
+        curl -Lso shellcheck.tar.xz https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz
+        tar -xf shellcheck.tar.xz shellcheck-stable/shellcheck --strip-components 1
 
     - name: ShellCheck
       shell: bash
