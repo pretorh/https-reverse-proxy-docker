@@ -1,14 +1,16 @@
 #!/usr/bin/env sh
 
+root=$(dirname "$0")
+
 if [ ! -d  ./private/acme ] ; then
-  sh $(dirname $0)/setup/first-run-note.sh
+  sh "$root/setup/first-run-note.sh"
   mkdir -pv ./private/acme
 fi
 
 mkdir -pv ./private/acme.sh
 
 if [ ! -f ./private/dhparam.pem ] ; then
-  sh $(dirname $0)/setup/generate-dhparam.sh
+  sh "$root/setup/generate-dhparam.sh"
 fi
 
 if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
@@ -18,7 +20,7 @@ if [ ! -d /etc/nginx/conf.d/sites/ ] ; then
 fi
 
 if [ ! -z "$CRON_DAY" -a ! -z "$CRON_HOUR" ] ; then
-  sh $(dirname $0)/job/install.sh
+  sh "$root/job/install.sh"
 fi
 
 echo ""
