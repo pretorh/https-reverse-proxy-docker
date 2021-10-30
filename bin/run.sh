@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 if [ ! -d  ./private/acme ] ; then
   sh $(dirname $0)/setup/first-run-note.sh
   mkdir -pv ./private/acme

@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 set -e
 
 echo "installing cron job for $CRON_DAY dow, $CRON_HOUR hour"
