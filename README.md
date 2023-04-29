@@ -18,3 +18,5 @@ docker run --rm -ti \
 ## Hosting
 
 See `docker-compose.yml` for an example. Then either sset the root path, or `proxy_pass` to another service
+
+See `./examples/`
