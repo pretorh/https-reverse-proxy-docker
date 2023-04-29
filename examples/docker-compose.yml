@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  rproxy:
+    image: pretorh/https-reverse-proxy
+    ports:
+      - 80:80
+      - 433:433
+    environment:
+      # set the day of week and hour when certificates should be renewed
+      - CRON_DAY=SUN
+      - CRON_HOUR=4
+    volumes:
+      - ./.private:/opt/rproxy/private   # certificates and account info
+      - ./sites:/etc/nginx/conf.d/sites/ # site configs that are included in nginx (recommended)
+      - ./public:/usr/share/nginx/html   # example public dir with files to serve (for simple sites)
+  web:
+    image: nginxdemos/nginx-hello
