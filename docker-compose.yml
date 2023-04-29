@@ -8,3 +8,4 @@ services:
       - 433:433
     volumes:
       - ./.private:/opt/rproxy/private
+      - ./sites:/etc/nginx/conf.d/sites/
