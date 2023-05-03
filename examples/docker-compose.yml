@@ -5,7 +5,7 @@ services:
     image: pretorh/https-reverse-proxy
     ports:
       - 80:80
-      - 433:433
+      - 443:443
     environment:
       # set the day of week and hour when certificates should be renewed
       - CRON_DAY=SUN
