@@ -2,10 +2,10 @@ version: "3"
 
 services:
   rproxy:
-    image: pretorh/https-reverse-proxy
+    image: pretorh/https-reverse-proxy:latest
     ports:
       - 80:80
-      - 433:433
+      - 443:443
     environment:
       # set the day of week and hour when certificates should be renewed
       - CRON_DAY=SUN
