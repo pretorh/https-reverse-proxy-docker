@@ -2,7 +2,7 @@ version: "3"
 
 services:
   rproxy:
-    image: pretorh/https-reverse-proxy
+    image: pretorh/https-reverse-proxy:latest
     ports:
       - 80:80
       - 443:443
