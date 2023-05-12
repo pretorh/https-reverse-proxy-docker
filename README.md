@@ -12,3 +12,5 @@ and http port (`-p 80:80`). Use the `domain-setup.sh` script to issue certificat
 ## Hosting
 
 See `docker-compose.yml` and site configs in `./examples/`
+
+Specifically confirm the parameters in `./etc/includes/ssl-params.inc`, and include or cherry-pick from it.
