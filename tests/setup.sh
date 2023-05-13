@@ -25,6 +25,7 @@ config_file() {
     -e 's|443:443|'"$port_map_https"'|' \
     -e 's|domain-setup.sh .*|domain-setup.sh '"$test_domain"'|g' \
     -e 's|combined.domain1.example.com|'"$test_domain"'|g' \
+    -e 's|# research before using/cherry-pick from: ||g' \
     "$example" > "$output"
 }
 
