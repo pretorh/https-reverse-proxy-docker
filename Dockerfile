@@ -1,4 +1,4 @@
-FROM nginx:1.23-alpine
+FROM nginx:1.25-alpine3.17-slim
 
 RUN apk update --no-cache && \
     apk add openssl acme.sh && \
