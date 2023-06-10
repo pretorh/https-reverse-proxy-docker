@@ -4,7 +4,6 @@ set -e
 domain=${1?need the domain name as the first parameter}
 
 mkdir -pv "/etc/ssl/acme/$domain/"
-mkdir -pv "/etc/ssl/acme/private/$domain/"
 
 reloadcmd=/opt/rproxy/reload-nginx.sh
 if [ "$NO_RELOAD" ] ; then
