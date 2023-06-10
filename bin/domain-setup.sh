@@ -6,7 +6,7 @@ nginx
 
 echo "Set up directories"
 mkdir -pv ./private/acme.sh
-mkdir -pv ./private/acme
+mkdir -pv ./private/certs
 
 echo "Issuing certificates"
 for domain in "$@" ; do

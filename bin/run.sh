@@ -2,9 +2,9 @@
 
 root=$(dirname "$0")
 
-if [ ! -d  ./private/acme ] ; then
+if [ ! -d  ./private/certs ] ; then
   sh "$root/setup/first-run-note.sh"
-  mkdir -pv ./private/acme
+  mkdir -pv ./private/certs
 fi
 
 mkdir -pv ./private/acme.sh
