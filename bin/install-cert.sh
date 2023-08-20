@@ -5,9 +5,9 @@ domain=${1?need the domain name as the first parameter}
 
 mkdir -pv "/etc/ssl/acme/$domain/"
 
-reloadcmd=/opt/rproxy/reload-nginx.sh
-if [ "$NO_RELOAD" ] ; then
-  reloadcmd=true
+reloadcmd=true
+if [ "$RELOAD_AFTER" ] ; then
+  reloadcmd=/opt/rproxy/reload-nginx.sh
 fi
 
 echo "rproxy: installing cert for $domain"

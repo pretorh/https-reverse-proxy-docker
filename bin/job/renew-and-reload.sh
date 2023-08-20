@@ -14,6 +14,11 @@ else
   updated=-1
 fi
 
+if [ $updated -eq 1 ] ; then
+  echo "certificates renewed, reloading"
+  /opt/rproxy/reload-nginx.sh
+fi
+
 if [ -x /opt/rproxy/private/post-cron.sh ] ; then
   echo "executing post-cron.sh script"
   /opt/rproxy/private/post-cron.sh $updated
