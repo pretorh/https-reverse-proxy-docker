@@ -18,7 +18,7 @@ else
   updated=-1
 fi
 
-if [ $updated -eq 1 ] ; then
+if [ $updated = 1 ] ; then
   echo "$log_prefix: certificates renewed, reloading"
   /opt/rproxy/reload-nginx.sh
 fi
